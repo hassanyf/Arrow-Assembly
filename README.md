@@ -15,3 +15,17 @@ interrupts per second, double the normal. You will have to reprogram
 channel 2 at every direction change, though you can enable the
 speaker once at the very start.
 
+### Pre-requisite
+
+1. DOSBox Emulator
+2. NASM (Netwide Assembler)
+
+### How to compile
+
+1. Open DOSBox
+2. Mount your drive and navigate to your assembly folder
+3. Make sure nasm.exe and arrow.asm are in the same folder
+4. Compile the program in DOSBox using this: `nasm arrow.com -o arrow.com -l arrow.lst`
+5. Now run the program via `arrow.com`
+6. Party
+
