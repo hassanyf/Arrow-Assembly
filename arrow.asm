@@ -54,12 +54,36 @@ delay1:
 	loop there
 	ret
 
+LEFT:
+	mov di, 4000
+	mov cx, 80
+where:
+	mov ax, 0x073C
+	push cx
+	mov cx, 60000
+delay3:
+	loop delay3
+	pop cx
+	inc di
+	inc di
+	push ax
+	mov ax, 0x0720
+	mov word[es:di], ax
+	pop ax
+	dec di
+	dec di
+	STD
+	stosw
+	loop where
+	ret
+
 START:
 	mov ax, 0xb800
 	mov es,ax
 	call CLRSCREEN
 	call RIGHT
 	call DOWN
+	call LEFT
 
 mov ax, 0x4c00
 INT 0x21
