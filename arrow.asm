@@ -32,11 +32,34 @@ delay:
 	loop here
 	ret
 
+DOWN:
+	mov di, 318
+	mov cx, 25
+there:
+	mov ax, 0x0756
+	push cx
+	mov cx, 60000
+delay1:
+	loop delay1
+	pop cx
+	sub di, 160
+	push ax
+	mov ax, 0x0720
+	mov word[es:di], ax
+	pop ax
+	add di, 160
+	CLD
+	stosw
+	add di, 158
+	loop there
+	ret
+
 START:
 	mov ax, 0xb800
 	mov es,ax
 	call CLRSCREEN
 	call RIGHT
+	call DOWN
 
 mov ax, 0x4c00
 INT 0x21
