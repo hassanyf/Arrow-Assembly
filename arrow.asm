@@ -12,7 +12,7 @@ CLRSCREEN:
 START:
 	mov ax, 0xb800
 	mov es,ax
-	call CLRSCREEN	
+	call CLRSCREEN
 
 mov ax, 0x4c00
 INT 0x21
